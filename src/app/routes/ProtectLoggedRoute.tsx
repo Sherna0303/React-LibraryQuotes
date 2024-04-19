@@ -6,11 +6,11 @@ interface ProtectedRouteProps {
     children: ReactNode;
 }
   
-export const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
+export const ProtectLoggedRoute = ({ children }: ProtectedRouteProps) => {
   const { state } = useContext(AppContext);
 
-  if (!state.isUserLogged) {
-    return <Navigate to='/auth' replace />;
+  if (state.isUserLogged) {
+    return <Navigate to='/'/>;
   } 
 
   return children;
