@@ -12,7 +12,7 @@ export const useAuth = () => {
     .then((isAuthenticated) => {
       if (isAuthenticated) {
         dispatch({ type: 'USER_LOGGED' });
-        
+        navigate('/');
       } else {
         setError('Las credenciales son incorrectas');
       }
