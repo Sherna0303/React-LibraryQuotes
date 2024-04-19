@@ -10,7 +10,11 @@ export const authService = (credentials: IUserCredentials): Promise<boolean> => 
   return http.post<{ token: string }>(url, body)
     .then((response) => {
       const storage = new StorageService();
-      storage.set('TOKEN', response.token);
-      return Boolean(response.token);
+      if (response.token) {
+        storage.set('TOKEN', response.token);
+        return true;
+      } else {
+        return false;
+      }
     });
 };
