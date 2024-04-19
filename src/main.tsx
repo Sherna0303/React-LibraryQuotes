@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { AppProvider } from './app/core/state/AppContext';
+import { Login } from './app/pages/Login';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <></>
-  </React.StrictMode>,
+  <AppProvider>
+    <React.StrictMode>
+      <Login />
+    </React.StrictMode>
+  </AppProvider>
 );
