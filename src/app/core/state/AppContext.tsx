@@ -1,13 +1,14 @@
-import { ReactElement, ReactNode, createContext, useReducer } from 'react';
+import { Dispatch, ReactElement, ReactNode, createContext, useEffect, useReducer } from 'react';
 
 export const initialState: IState = {
-  isUserLogged: false,
+  isUserLogged: localStorage.getItem('isUserLogged') === 'true',
 };
+
 interface IAppContext {
   state: IState;
-  dispatch: any;
+  dispatch: Dispatch<IAction>;
 }
-export const AppContext = createContext<IAppContext>({ state: initialState, dispatch: null });
+export const AppContext = createContext<IAppContext>({ state: initialState, dispatch: () => null  });
 
 interface IAppProviderProps {
   children: ReactNode;
@@ -32,6 +33,10 @@ export const reducer = (state: IState, action: IAction): IState => {
 
 export const AppProvider = ({ children }: IAppProviderProps): ReactElement => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    localStorage.setItem('isUserLogged', state.isUserLogged.toString());
+  }, [state.isUserLogged]);
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
