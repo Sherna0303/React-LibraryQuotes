@@ -8,17 +8,14 @@ export const useAuth = () => {
   const [error, setError] = useState<string>();
   const { dispatch } = useContext(AppContext);
 
-  const authenticate = (userName: string, password: string) => {
-    authService({ userName, password })
-      .then((isAuthenticated) => {
-        if (isAuthenticated) {
-          dispatch({ type: 'USER_LOGGED' });
-          navigate('/');
-        } else {
-          setError('Las credenciales son incorrectas');
-        }
-      });
-  };
-
+  const authenticate = (email: string, password: string) => authService({ email, password })
+    .then((isAuthenticated) => {
+      if (isAuthenticated) {
+        dispatch({ type: 'USER_LOGGED' });
+        
+      } else {
+        setError('Las credenciales son incorrectas');
+      }
+    });
   return { authenticate, error };
 };
