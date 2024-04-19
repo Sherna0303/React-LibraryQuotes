@@ -1,5 +1,8 @@
 import { FormEvent, ReactElement } from 'react';
 import { useAuth } from '../../../core/hooks/useAuth';
+import { Label } from '../../elements/Label';
+import { Legend } from '../../elements/Legend';
+import { Button } from '../../elements/Button';
 
 export const FormLogin = (): ReactElement => {
   const { authenticate, error } = useAuth();
@@ -19,21 +22,13 @@ export const FormLogin = (): ReactElement => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='main__form'>
       <fieldset>
-        <legend>Enter credentials</legend>
-
-        <label>
-          Email:
-          <input type="text" name='email' />
-        </label>
-
-        <label>
-          Password:
-          <input type="password" name='password' />
-        </label>
+        <Legend className='main__legend' text='Enter credentials' />
+        <Label classNameLabel='main__label' classNameInput='main_input' nameInput='email' text='Email:' type='text'/>
+        <Label classNameLabel='main__label' classNameInput='main_input' nameInput='password' text='Password:' type='password'/>
       </fieldset>
-      <button>Send</button>
+      <Button className='main__button' text='Send' />
       {error && <span style={{ color: 'red' }}>{error}</span>}
     </form>
   );

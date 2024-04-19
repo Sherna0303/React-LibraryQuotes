@@ -1,5 +1,8 @@
 import { FormEvent, ReactElement, useState } from 'react';
 import { useRegsiter } from '../../../core/hooks/userRegister';
+import { Legend } from '../../elements/Legend';
+import { Label } from '../../elements/Label';
+import { Button } from '../../elements/Button';
 
 export const FormRegister = (): ReactElement => {
   const { register, error} = useRegsiter();
@@ -35,29 +38,13 @@ export const FormRegister = (): ReactElement => {
   return (
     <form onSubmit={handleSubmit}>
       <fieldset>
-        <legend>Register credentials</legend>
-
-        <label>
-              Name:
-          <input type="text" name='name' />
-        </label>
-    
-        <label>
-              Email:
-          <input type="text" name='email' />
-        </label>
-    
-        <label>
-              Password:
-          <input type="password" name='password' />
-        </label>
-
-        <label>
-              Repeat password:
-          <input type="password" name='repeatPassword' />
-        </label>
+        <Legend className='main__legend' text='Register credentials'/>
+        <Label classNameLabel='main__label' classNameInput='main__input' nameInput='name' type='text' text='Name:' />
+        <Label classNameLabel='main__label' classNameInput='main__input' nameInput='email' type='text' text='Email:' />
+        <Label classNameLabel='main__label' classNameInput='main__input' nameInput='password' type='password' text='Password:' />
+        <Label classNameLabel='main__label' classNameInput='main__input' nameInput='repeatPassword' type='password' text='Repeat password:' />
       </fieldset>
-      <button>Send</button>
+      <Button className='main__button' text='Send'/>
       {error && <span style={{ color: 'red' }}>{error}</span>}
       {passwordMatchError && <span style={{ color: 'red' }}>{passwordMatchError}</span>}
     </form>
