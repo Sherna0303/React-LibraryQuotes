@@ -6,7 +6,7 @@ export const useAuth = () => {
   const [error, setError] = useState<string>();
   const { dispatch } = useContext(AppContext);
 
-  const authenticate = (userName: string, password: string) => authService({ email: userName, password })
+  const authenticate = (email: string, password: string) => authService({ email: email, password })
     .then((isAuthenticated) => {
       if (isAuthenticated) {
         dispatch({ type: 'USER_LOGGED' });

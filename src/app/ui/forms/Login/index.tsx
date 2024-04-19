@@ -8,12 +8,12 @@ export const FormLogin = (): ReactElement => {
     event.preventDefault();
     const target = event.target as typeof event.target & {
       elements: {
-        userName: { value: string };
+        email: { value: string };
         password: { value: string };
       };
     };
     
-    const email = target.elements.userName.value;
+    const email = target.elements.email.value;
     const password = target.elements.password.value;
     authenticate(email, password);
   };
