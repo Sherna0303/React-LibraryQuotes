@@ -1,15 +1,16 @@
-import { createHashRouter } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import { ProtectedRoute } from './ProtectedRoute';
 import { Login } from '../pages/Login';
 import { Home } from '../pages/Home';
 import { Register } from '../pages/Register';
 import { ProtectLoggedRoute } from './ProtectLoggedRoute';
 import { LayoutAuth } from '../ui/layouts/LayoutAuth';
+import { LayoutMain } from '../ui/layouts/LayoutMain';
+import { SaveCopy } from '../pages/SaveCopy';
 
-export const router = createHashRouter([
+export const router = createBrowserRouter([
 
   {
-    path: '',
     Component: LayoutAuth,
     children: [
       {
@@ -21,20 +22,33 @@ export const router = createHashRouter([
     
       },
       {
-        path: '/register',
+        path: 'register',
         element: 
         <ProtectLoggedRoute >
           <Register/>
         </ProtectLoggedRoute>
-        
       },
     ]
   },
   {
-    path: '',
-    element: 
-    <ProtectedRoute >
-      <Home />
-    </ProtectedRoute>
-  }
+    element: <ProtectedRoute ><LayoutMain/></ProtectedRoute>,
+    children: [
+      {
+        path: '',
+        Component: Home
+      },
+      {
+        path: '/funtion1',
+        Component: SaveCopy
+      },
+      {
+        path: '/funtion2',
+        element: <h1>funcion2</h1>
+      },
+      {
+        path: '/funtion3',
+        element: <h1>funcion3</h1>
+      },
+    ]
+  },
 ]);
