@@ -12,8 +12,6 @@ export const useCart = () => {
       return;
     }
 
-    
-
     setCart([...cart, copy]);
   };
 
@@ -21,9 +19,31 @@ export const useCart = () => {
     setCart(cart.filter(copy => copy.copyId !== copyId));
   };
 
+  const increaseQuantity = (copyId: number) => {
+    const updatedCart = cart.map(copy => {
+      if (copy.copyId === copyId) {
+        copy.quantity += 1;
+      }
+      return copy;
+    });
+    setCart(updatedCart);
+  };
+
+  const decreaseQuantity = (copyId: number) => {
+    const updatedCart = cart.map(copy => {
+      if (copy.copyId === copyId && copy.quantity > 1) {
+        copy.quantity -= 1;
+      }
+      return copy;
+    });
+    setCart(updatedCart);
+  };
+
   return {
     cart,
     addToCart,
     removeFromCart,
+    increaseQuantity,
+    decreaseQuantity
   };
 };

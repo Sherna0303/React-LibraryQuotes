@@ -11,7 +11,6 @@ export const useAuth = () => {
   const authenticate = (email: string, password: string) => authService({ email, password })
     .then((isAuthenticated) => {
       if (isAuthenticated) {
-        window.location.reload();
         dispatch({ type: 'USER_LOGGED' });
         navigate('/');
       } else {
