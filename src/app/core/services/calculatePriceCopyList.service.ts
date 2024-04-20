@@ -6,7 +6,6 @@ import { StorageService } from './general/storage.service';
 
 export const calculatePriceCopyListService = (credencials: ICopyList[]):Promise<unknown> => {
   const storageService = new StorageService();
-
   const headers: HeadersInit = {
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${storageService.get('TOKEN')}`,
