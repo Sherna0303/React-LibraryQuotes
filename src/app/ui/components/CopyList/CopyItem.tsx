@@ -1,5 +1,5 @@
 import React from 'react';
-import { Copy } from '../../../core/models/copy';
+import { Copy } from '../../../core/models/copy.model';
 
 const CopyItem: React.FC<{ copy: Copy }> = ({ copy }) => {
   const priceWithTwoDecimals = copy.price.toFixed(2);
