@@ -11,9 +11,11 @@ interface CalculateListProps {
   cart: Copy[];
   addToCart: (copy: Copy) => void;
   removeFromCart: (copyId: number) => void;
+  increaseQuantity: (copyId: number) => void;
+  decreaseQuantity: (copyId: number) => void;
 }
 
-export const CalculateList: React.FC<CalculateListProps> = ({ books, cart, addToCart, removeFromCart }) => {
+export const CalculateList: React.FC<CalculateListProps> = ({ books, cart, addToCart, removeFromCart,  increaseQuantity, decreaseQuantity}) => {
   const [backendResponse, setBackendResponse] = useState<any>(null);
 
   const handleClick = () => {
@@ -26,7 +28,6 @@ export const CalculateList: React.FC<CalculateListProps> = ({ books, cart, addTo
       .then(response => setBackendResponse(response));
   };
 
-
   return (
     <div>
       <h1>Bookstore</h1>
@@ -35,7 +36,7 @@ export const CalculateList: React.FC<CalculateListProps> = ({ books, cart, addTo
           <Book key={book.copyId} book={book} addToCart={addToCart} />
         ))}
       </div>
-      <Cart cart={cart} removeFromCart={removeFromCart} />
+      <Cart cart={cart} removeFromCart={removeFromCart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity}/>
       <button onClick={handleClick}>Calcular</button>
       {backendResponse && <PriceListResponse responseData={backendResponse} />}
     </div>

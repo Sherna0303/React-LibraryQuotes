@@ -6,7 +6,7 @@ import { CalculateList } from '../pages/CalculateList';
 
 
 export const BookstoreContainer = () => {
-  const { cart, addToCart, removeFromCart } = useCart();
+  const { cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity } = useCart();
   const [books, setBooks] = useState<Copy[]>([]);
 
   useEffect(() => {
@@ -18,5 +18,5 @@ export const BookstoreContainer = () => {
     fetchBooks();
   }, []);
 
-  return <CalculateList books={books} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart}/>;
+  return <CalculateList books={books} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity}/>;
 };
