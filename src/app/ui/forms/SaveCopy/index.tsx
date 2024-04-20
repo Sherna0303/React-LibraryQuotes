@@ -1,12 +1,27 @@
-import { FormEvent, ReactElement } from 'react';
+import { FormEvent, ReactElement, useState } from 'react';
 import { Legend } from '../../elements/Legend';
 import { Label } from '../../elements/Label';
 import { Button } from '../../elements/Button';
 import { useSaveCopy } from '../../../core/hooks/useSaveCopy';
+import { Options } from '../../elements/Options';
+
+interface typeData {
+  type: string;
+}
+
+const initialFormState: typeData = {
+  type: 'BOOK',
+};
+
 
 export const FormSaveCopy = (): ReactElement => {
-  const { saveCopy, error} = useSaveCopy();
+  const { saveCopy, error } = useSaveCopy();
+  const [typeData, setTypeData] = useState<typeData>(initialFormState);
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setTypeData({ ...typeData, [name]: value });
+  };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -34,7 +49,13 @@ export const FormSaveCopy = (): ReactElement => {
         <Label classNameLabel='main__label' classNameInput='main__input' nameInput='name' type='text' text='Name:' />
         <Label classNameLabel='main__label' classNameInput='main__input' nameInput='author' type='text' text='Author:' />
         <Label classNameLabel='main__label' classNameInput='main__input' nameInput='price' type='number' text='Price:' />
-        <Label classNameLabel='main__label' classNameInput='main__input' nameInput='type' type='text' text='Type:' />
+        
+        <label className='main__label'>Type:
+          <select className='main__select' id="type" name="type" value={typeData.type} onChange={handleChange}>
+            <Options className='main__option' value='BOOK' text='Book'/>
+            <Options className='main__option' value='NOVEL' text='Novel'/>
+          </select>
+        </label>
 
       </fieldset>
       <Button className='main__button' text='Send'/>
