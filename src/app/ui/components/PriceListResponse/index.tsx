@@ -17,6 +17,10 @@ interface PriceListResponseProps {
 }
 
 export const PriceListResponse: React.FC<PriceListResponseProps> = ({ responseData }) => {
+  if (!responseData.copies) {
+    return null;
+  }
+
   return (
     <div>
       <h2>Antiquity Years: {responseData.antiquityYears}</h2>
