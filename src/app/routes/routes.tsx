@@ -7,6 +7,7 @@ import { ProtectLoggedRoute } from './ProtectLoggedRoute';
 import { LayoutAuth } from '../ui/layouts/LayoutAuth';
 import { LayoutMain } from '../ui/layouts/LayoutMain';
 import { SaveCopy } from '../pages/SaveCopy';
+import { CalculateList } from '../pages/CalculateList';
 
 export const router = createBrowserRouter([
 
@@ -43,7 +44,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/funtion2',
-        element: <h1>funcion2</h1>
+        Component: CalculateList
       },
       {
         path: '/funtion3',
