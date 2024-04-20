@@ -5,9 +5,15 @@ import http from './general/http.service';
 import { StorageService } from './general/storage.service';
 
 export const authService = (credentials: IUserCredentials): Promise<boolean> => {
+  const storageService = new StorageService();
+  const headers: HeadersInit = {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${storageService.get('TOKEN')}`,
+  };
+
   const url = urls.auth;
   const body = authenticationMapper.toApi(credentials);
-  return http.post<{ token: string }>(url, body)
+  return http.post<{ token: string }>(url, headers,body)
     .then((response) => {
       const storage = new StorageService();
       if (response.token) {
