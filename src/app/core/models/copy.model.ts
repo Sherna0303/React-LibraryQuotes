@@ -4,4 +4,5 @@ export interface Copy {
     author: string;
     price: number;
     type: string;
+    quantity: number;
 }
