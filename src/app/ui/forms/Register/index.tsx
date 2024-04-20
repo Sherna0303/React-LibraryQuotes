@@ -1,11 +1,11 @@
 import { FormEvent, ReactElement, useState } from 'react';
-import { useRegsiter } from '../../../core/hooks/userRegister';
+import { useRegister } from '../../../core/hooks/userRegister';
 import { Legend } from '../../elements/Legend';
 import { Label } from '../../elements/Label';
 import { Button } from '../../elements/Button';
 
 export const FormRegister = (): ReactElement => {
-  const { register, error} = useRegsiter();
+  const { register, error} = useRegister();
   const [passwordMatchError, setPasswordMatchError] = useState<string | null>(null);
 
 

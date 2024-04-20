@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../state/AppContext';
 import { registerService } from '../services/register.service';
 
-export const useRegsiter = () => {
+export const useRegister = () => {
   const navigate = useNavigate();
   const [error, setError] = useState<string>();
   const { dispatch } = useContext(AppContext);

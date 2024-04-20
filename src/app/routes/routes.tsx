@@ -6,6 +6,7 @@ import { Register } from '../pages/Register';
 import { ProtectLoggedRoute } from './ProtectLoggedRoute';
 import { LayoutAuth } from '../ui/layouts/LayoutAuth';
 import { LayoutMain } from '../ui/layouts/LayoutMain';
+import { SaveCopy } from '../pages/SaveCopy';
 
 export const router = createBrowserRouter([
 
@@ -26,7 +27,6 @@ export const router = createBrowserRouter([
         <ProtectLoggedRoute >
           <Register/>
         </ProtectLoggedRoute>
-        
       },
     ]
   },
@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/funtion1',
-        element: <h1>funcion1</h1>
+        Component: SaveCopy
       },
       {
         path: '/funtion2',
