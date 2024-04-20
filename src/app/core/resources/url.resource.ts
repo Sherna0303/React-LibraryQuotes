@@ -6,4 +6,5 @@ export const urls = {
   verifyToken: `${environment.apiUrl}/auth/verifyToken`,
   saveCopy: `${environment.apiUrl}/quotes/saveCopy`,
   getAllCopies: `${environment.apiUrl}/quotes/GetAllCopies`,
+  calculateListCopies: `${environment.apiUrl}/quotes/calculateListCopyPrice`,
 };

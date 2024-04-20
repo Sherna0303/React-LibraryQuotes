@@ -1,4 +1,4 @@
-import { Copy } from '../models/copy';
+import { Copy } from '../models/copy.model';
 import { urls } from '../resources/url.resource';
 import http from './general/http.service';
 
