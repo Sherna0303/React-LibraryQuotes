@@ -1,29 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { Copy } from '../core/models/copy';
+import { useEffect, useState } from 'react';
+import { useCart } from '../core/hooks/useCart';
+import { Copy } from '../core/models/copy.model';
 import { copyListService } from '../core/services/copyList.service';
-import CopyList from '../ui/components/CopyList';
+import { CalculateList } from '../pages/CalculateList';
 
-const CopyListContainer: React.FC = () => {
-  const [copies, setCopies] = useState<Copy[]>([]);
+
+export const BookstoreContainer = () => {
+  const { cart, addToCart, removeFromCart } = useCart();
+  const [books, setBooks] = useState<Copy[]>([]);
 
   useEffect(() => {
-    const fetchAndSetCopies = async () => {
-      try {
-        const copiesData = await copyListService();
-        setCopies(copiesData);
-      } catch (error) {
-        console.error('Error fetching copies:', error);
-      }
+    const fetchBooks = async () => {
+      const booksData = await copyListService();
+      setBooks(booksData);
     };
-    fetchAndSetCopies();
+
+    fetchBooks();
   }, []);
 
-  return (
-    <>
-      <h1>Copy List</h1>
-      <CopyList copies={copies} />
-    </>
-  );
+  return <CalculateList books={books} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart}/>;
 };
-
-export default CopyListContainer;

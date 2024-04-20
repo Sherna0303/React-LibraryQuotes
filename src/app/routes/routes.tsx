@@ -8,6 +8,7 @@ import { LayoutAuth } from '../ui/layouts/LayoutAuth';
 import { LayoutMain } from '../ui/layouts/LayoutMain';
 import { SaveCopy } from '../pages/SaveCopy';
 import { CalculateList } from '../pages/CalculateList';
+import { BookstoreContainer } from '../containers/CopyListContainer';
 
 export const router = createBrowserRouter([
 
@@ -44,7 +45,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/funtion2',
-        Component: CalculateList
+        Component: BookstoreContainer
       },
       {
         path: '/funtion3',

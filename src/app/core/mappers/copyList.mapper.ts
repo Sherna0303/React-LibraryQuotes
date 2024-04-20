@@ -1,13 +1,12 @@
 import { ICopyList } from '../models/copy-list.model';
 
 export default {
-  apiTo: (credentials: ICopyList) => {
+  toApi: (credentials: ICopyList[]) => {
     return {
-      copyId: credentials.copyId,
-      name: credentials.name,
-      author: credentials.author,
-      price: credentials.price,
-      type: credentials.type
+      Copies: credentials.map(credential => ({
+        Id: credential.id,
+        Amount: credential.amount
+      }))
     };
   }
 };
