@@ -37,7 +37,7 @@
 .main__button {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #4a0086;
+    background-color: #75a1e4;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -48,7 +48,7 @@
 }
 
 .main__button:hover {
-    background-color: #6000af;
+    background-color: #45a4e4;
 }
 
 .main__button:disabled {
