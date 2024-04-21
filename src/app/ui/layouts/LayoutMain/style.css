@@ -1,5 +1,14 @@
 main {
-    min-height: 100vh;
+    
+}
+
+.save__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+
 }
 
 .main__title {
