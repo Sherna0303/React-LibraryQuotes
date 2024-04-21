@@ -1,0 +1,48 @@
+.login__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+.login__Title {
+    font-size: 6vh;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+}
+
+.separator::before {
+    margin-right: 10px;
+}
+
+.separator::after {
+    margin-left: 10px;
+}
+
+.or {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.signup-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
