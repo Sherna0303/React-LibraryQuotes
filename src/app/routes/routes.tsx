@@ -7,7 +7,7 @@ import { ProtectLoggedRoute } from './ProtectLoggedRoute';
 import { LayoutAuth } from '../ui/layouts/LayoutAuth';
 import { LayoutMain } from '../ui/layouts/LayoutMain';
 import { SaveCopy } from '../pages/SaveCopy';
-import { BookstoreContainer } from '../containers/CopyListContainer';
+import { ListCopies } from '../pages/ListCopies';
 
 export const router = createBrowserRouter([
   {
@@ -43,7 +43,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/funtion2',
-        Component: BookstoreContainer
+        Component: ListCopies
       },
       {
         path: '/funtion3',

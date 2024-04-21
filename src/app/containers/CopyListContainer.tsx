@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { useCart } from '../core/hooks/useCart';
 import { Copy } from '../core/models/copy.model';
 import { copyListService } from '../core/services/copyList.service';
-import { CalculateList } from '../pages/CalculateList';
+import { CalculateList } from '../ui/components/CalculateList';
 
 
-export const BookstoreContainer = () => {
+export const CopyListContainer = () => {
   const { cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity } = useCart();
   const [books, setBooks] = useState<Copy[]>([]);
 

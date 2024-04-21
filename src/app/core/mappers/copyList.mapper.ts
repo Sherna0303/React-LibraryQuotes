@@ -1,11 +1,11 @@
-import { ICopyList } from '../models/copy-list.model';
+import { Copy } from '../models/copy.model';
 
 export default {
-  toApi: (credentials: ICopyList[]) => {
+  toApi: (credentials: Copy[]) => {
     return {
       Copies: credentials.map(credential => ({
-        Id: credential.id,
-        Amount: credential.amount
+        Id: credential.copyId,
+        Amount: credential.quantity
       }))
     };
   }
