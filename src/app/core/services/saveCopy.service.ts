@@ -13,12 +13,13 @@ export const saveCopyService = (credencials: ICopySave):Promise<boolean> => {
 
   const url = urls.saveCopy;
   const body = savecopyMapper.toApi(credencials);
-  return http.post<{ name: string }>(url, headers, body)
+  return http.post(url, headers, body)
     .then((response) => {
-      if (response.name) {
+      if (response.status === 200) {
         return true;
-      } else {
-        return false;
+      } else if (response.status === 401){
+        window.location.reload();
       }
+      return false;
     });
 };

@@ -13,14 +13,19 @@ export const authService = (credentials: IUserCredentials): Promise<boolean> => 
 
   const url = urls.auth;
   const body = authenticationMapper.toApi(credentials);
-  return http.post<{ token: string }>(url, headers,body)
-    .then((response) => {
+  return http.post(url, headers,body)
+    .then(async (response) => {
       const storage = new StorageService();
-      if (response.token) {
-        storage.set('TOKEN', response.token);
-        return true;
-      } else {
-        return false;
+      if (response.status === 200) {
+        const responseBody = await response.json(); 
+        if (responseBody.token) {
+          const token = responseBody.token; 
+          storage.set('TOKEN', token);
+          return true;
+        }
+      } else if (response.status === 401){
+        window.location.reload();
       }
+      return false;
     });
 };

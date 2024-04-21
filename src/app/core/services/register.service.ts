@@ -13,14 +13,19 @@ export const registerService = (credencials: IUserRegister):Promise<boolean> => 
 
   const url = urls.register;
   const body = registerMapper.toApi(credencials);
-  return http.post<{ token: string }>(url, headers,body)
-    .then((response) => {
+  return http.post(url, headers,body)
+    .then(async (response) => {
       const storage = new StorageService();
-      if (response.token) {
-        storage.set('TOKEN', response.token);
-        return true;
-      } else {
-        return false;
+      if (response.status === 200) {
+        const responseBody = await response.json(); 
+        if (responseBody.token) {
+          const token = responseBody.token; 
+          storage.set('TOKEN', token);
+          return true;
+        }
+      } else if (response.status === 401){
+        window.location.reload();
       }
+      return false;
     });
 };

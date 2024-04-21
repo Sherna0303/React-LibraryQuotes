@@ -13,5 +13,14 @@ export const calculatePriceCopyListService = (credencials: ICopyList[]):Promise<
   
   const url = urls.calculateListCopies;
   const body = copyListMapper.toApi(credencials);
-  return http.post(url, headers,body);
+  return http.post(url, headers,body)
+    .then(async (response) => {
+      if (response.status === 200) {
+        const responseBody = await response.json(); 
+        return responseBody;
+      } else if (response.status === 401){
+        window.location.reload();
+      }
+      return false;
+    });
 };

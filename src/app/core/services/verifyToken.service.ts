@@ -10,9 +10,9 @@ export const verifyToken = ():Promise<boolean> => {
   };
 
   const url = urls.verifyToken;
-  return http.get<{ verify: string }>(url, headers)
+  return http.get(url, headers)
     .then((response) => {
-      if (response.verify) {
+      if (response.status === 200) {
         return true;
       } else {
         return false;

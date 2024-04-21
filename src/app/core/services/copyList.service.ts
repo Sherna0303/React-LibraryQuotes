@@ -11,5 +11,12 @@ export const copyListService = (): Promise<Copy[]> => {
     'Authorization': `Bearer ${storageService.get('TOKEN')}`,
   };
   const url = urls.getAllCopies;
-  return http.get(url, headers);
+  return http.get(url, headers)
+    .then(response => {
+      if (response.status === 200) {
+        return response.json();
+      } else if (response.status === 401){
+        window.location.reload();
+      }
+    });
 };
