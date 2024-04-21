@@ -6,43 +6,43 @@
     height: 90vh;
 }
 
-.login__Title {
+.main__title {
     font-size: 6vh;
 }
 
-.separator {
+.main__separator {
     display: flex;
     align-items: center;
     text-align: center;
     margin: 20px 0;
 }
 
-.separator::before,
-.separator::after {
+.main__separator::before,
+.main__separator::after {
     content: '';
     flex: 1;
     border-bottom: 1px solid #ccc;
 }
 
-.separator::before {
+.main__separator::before {
     margin-right: 10px;
 }
 
-.separator::after {
+.main__separator::after {
     margin-left: 10px;
 }
 
-.or {
+.main__or {
     margin: 0 10px;
     font-weight: bold;
 }
 
-.signup-link {
+.main__link {
     text-decoration: none;
     color: #007bff;
     font-weight: bold;
 }
 
-.signup-link:hover {
+.main__link:hover {
     text-decoration: underline;
 }
