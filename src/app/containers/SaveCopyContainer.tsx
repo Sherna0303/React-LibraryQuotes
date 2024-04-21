@@ -4,9 +4,9 @@ import { FormSaveCopy } from '../ui/forms/SaveCopy';
 
 export const SaveCopyContainer = (): ReactElement => {
   return (
-    <section>
-      <Title text="Funtion 1" className='Login__Title' type='h1' />
+    <div className='save__container'>
+      <Title text="Add Copy" className='main__title' type='h1' />
       <FormSaveCopy />
-    </section>
+    </div>
   );
 };
