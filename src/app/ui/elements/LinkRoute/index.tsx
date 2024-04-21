@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 interface LinkRouteProps {
   route: string;
   text: string;
-  
+  className: string;
 }
 
-export const LinkRoute = ({ route, text }: LinkRouteProps): ReactElement => {
+export const LinkRoute = ({ route, text, className }: LinkRouteProps): ReactElement => {
 
   return (
-    <Link to={route}>
+    <Link to={route} className={className}>
       {text}
     </Link>
   );
