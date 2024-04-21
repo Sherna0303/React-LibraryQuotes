@@ -1,11 +1,12 @@
 import { Outlet } from 'react-router-dom';
 import './style.css';
 import { ReactElement } from 'react';
+import { Header } from '../../components/Header';
 
 export const LayoutMain = (): ReactElement => {
   return(
     <>
-      <h1>header</h1>
+      <Header />
       <main>
         <Outlet/>
       </main>

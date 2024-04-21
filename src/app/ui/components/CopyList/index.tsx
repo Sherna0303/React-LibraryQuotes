@@ -1,13 +1,6 @@
 import React from 'react';
 import CopyItem from './CopyItem';
-
-interface Copy {
-  copyId: number;
-  name: string;
-  author: string;
-  price: number;
-  type: string;
-}
+import { Copy } from '../../../core/models/copy.model';
 
 const CopyList: React.FC<{ copies: Copy[] }> = ({ copies }) => {
   return (
