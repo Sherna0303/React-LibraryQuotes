@@ -7,9 +7,9 @@ import { ProtectLoggedRoute } from './ProtectLoggedRoute';
 import { LayoutAuth } from '../ui/layouts/LayoutAuth';
 import { LayoutMain } from '../ui/layouts/LayoutMain';
 import { SaveCopy } from '../pages/SaveCopy';
+import { ListCopies } from '../pages/ListCopies';
 
 export const router = createBrowserRouter([
-
   {
     Component: LayoutAuth,
     children: [
@@ -43,7 +43,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/funtion2',
-        element: <h1>funcion2</h1>
+        Component: ListCopies
       },
       {
         path: '/funtion3',

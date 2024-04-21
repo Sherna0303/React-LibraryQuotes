@@ -1,25 +1,22 @@
-import savecopyMapper from '../mappers/savecopy.mapper';
-import { ICopySave } from '../models/copy-save.model';
+import { Copy } from '../models/copy.model';
 import { urls } from '../resources/url.resource';
 import http from './general/http.service';
 import { StorageService } from './general/storage.service';
 
-export const saveCopyService = (credencials: ICopySave):Promise<boolean> => {
+export const copyListService = (): Promise<Copy[]> => {
   const storageService = new StorageService();
+
   const headers: HeadersInit = {
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${storageService.get('TOKEN')}`,
   };
-
-  const url = urls.saveCopy;
-  const body = savecopyMapper.toApi(credencials);
-  return http.post(url, headers, body)
-    .then((response) => {
+  const url = urls.getAllCopies;
+  return http.get(url, headers)
+    .then(response => {
       if (response.status === 200) {
-        return true;
+        return response.json();
       } else if (response.status === 401){
         window.location.reload();
       }
-      return false;
     });
 };
