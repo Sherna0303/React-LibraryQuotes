@@ -29,9 +29,9 @@ export const FormLogin = (): ReactElement => {
   return (
     <form onSubmit={handleSubmit} className='main__form'>
       <fieldset className='main__fieldset'>
-        <Label classNameLabel='main__label' classNameSpan='main__label-span' classNameInput='main_input' nameInput='email' text='Email:' type='text' onChange={handleEmailChange} />
-        <Label classNameLabel='main__label' classNameSpan='main__label-span' classNameInput='main_input' nameInput='password' text='Password:' type='password' onChange={handlePasswordChange} />
-        {error && <Span className='main__span-error' text='error'/>}
+        <Label classNameLabel='main__label' classNameSpan='main__label-span' classNameInput='main__input' nameInput='email' text='Email:' type='text' onChange={handleEmailChange} />
+        <Label classNameLabel='main__label' classNameSpan='main__label-span' classNameInput='main__input' nameInput='password' text='Password:' type='password' onChange={handlePasswordChange} />
+        {error && <Span className='main__span-error' text={error}/>}
       </fieldset>
       <Button className='main__button' text='Sign In' disabled={!isEmailValid} />
     </form>
