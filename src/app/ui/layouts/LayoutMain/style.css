@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 76px - 55px);
+    min-height: calc(100vh - 70px - 55px);
 }
 
 .main__title {

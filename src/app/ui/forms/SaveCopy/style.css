@@ -27,3 +27,14 @@
 .main__label-copy {
     margin-top: 8px;
 }
+
+@media screen and (width < 532px) {
+    .main__form-copy {
+        width: 400px;
+    }
+}
+@media screen and (width < 422px) {
+    .main__form-copy {
+        width: 290px;
+    }
+}
