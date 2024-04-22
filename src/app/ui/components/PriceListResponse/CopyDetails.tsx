@@ -14,7 +14,7 @@ interface CopyDetailsProps {
 
 export const CopyDetails: React.FC<CopyDetailsProps> = ({ copy }) => {
   return (
-    <>
+    <div className='copies__container'>
       <Paragraph className='copies__name' text={copy.name} />
 
       <div className="copies__detail-container">
@@ -36,6 +36,6 @@ export const CopyDetails: React.FC<CopyDetailsProps> = ({ copy }) => {
         <Span className='copies__detail' text='Total Price:'/>
         <Paragraph className='copies__totalPrice' text={copy.totalPrice.toFixed(2)} />
       </div>
-    </>
+    </div>
   );
 };
