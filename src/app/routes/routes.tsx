@@ -1,7 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { ProtectedRoute } from './ProtectedRoute';
 import { Login } from '../pages/Login';
-import { Home } from '../pages/Home';
 import { Register } from '../pages/Register';
 import { ProtectLoggedRoute } from './ProtectLoggedRoute';
 import { LayoutAuth } from '../ui/layouts/LayoutAuth';
@@ -35,7 +34,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: '',
-        Component: Home
+        Component: SaveCopy
       },
       {
         path: '/funtion1',

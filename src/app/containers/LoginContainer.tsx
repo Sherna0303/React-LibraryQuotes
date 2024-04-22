@@ -5,10 +5,15 @@ import { LinkRoute } from '../ui/elements/LinkRoute';
 
 export const LoginContainer = (): ReactElement => {
   return (
-    <section>
-      <Title text="Login" className='Login__Title' type='h1' />
+    <div className='login__container'>
+      <Title text="Login" className='main__title' type='h1' />
       <FormLogin />
-      <LinkRoute route='/register' text='Register' />
-    </section>
+      <div className="main__separator">
+        <span className="main__separator-line" />
+        <span className="main__or">or</span>
+        <span className="main__separator-line" />
+      </div>
+      <LinkRoute className='main__link' route='/register' text='Register' />
+    </div>
   );
 };

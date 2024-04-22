@@ -1,21 +1,23 @@
-import { ReactElement } from 'react';
+import { ChangeEvent, ReactElement } from 'react';
 import './style.css';
 
 interface LabelProps {
   classNameLabel: string;
   classNameInput: string;
+  classNameSpan: string;
   text: string;
   type: string;
   nameInput: string;
-  
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  hasError?: boolean;
 }
 
-export const Label = ({ classNameLabel, classNameInput, text, type, nameInput }: LabelProps): ReactElement => {
+export const Label = ({ classNameLabel, classNameInput, classNameSpan, text, type, nameInput, onChange, hasError }: LabelProps): ReactElement => {
 
   return (
     <label className={classNameLabel}>
-      {text}
-      <input className={classNameInput} type={type} name={nameInput} />
+      <span className={classNameSpan}>{text}</span>
+      <input className={`${classNameInput} ${hasError ? 'error' : ''}`} type={type} name={nameInput} onChange={onChange} />
     </label>
   );
 };

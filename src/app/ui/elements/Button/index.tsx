@@ -1,16 +1,16 @@
-import { ReactElement } from 'react';
-import './style.css';
+import { MouseEventHandler, ReactElement } from 'react';
 
 interface ButtonProps {
   className: string;
   text: string;
-  
+  disabled?: boolean;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-export const Button = ({ className, text }: ButtonProps): ReactElement => {
+export const Button = ({ className, text, disabled, onClick }: ButtonProps): ReactElement => {
 
   return (
-    <button className={className}>
+    <button disabled={disabled} className={className} onClick={onClick}>
       {text}
     </button>
   );
