@@ -7,4 +7,5 @@ export const urls = {
   saveCopy: `${environment.apiUrl}/quotes/saveCopy`,
   getAllCopies: `${environment.apiUrl}/quotes/GetAllCopies`,
   calculateListCopies: `${environment.apiUrl}/quotes/calculateListCopyPrice`,
+  calculateBudget: `${environment.apiUrl}/quotes/calculateBudget`,
 };
