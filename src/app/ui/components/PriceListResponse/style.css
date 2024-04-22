@@ -34,6 +34,15 @@
     overflow-y: auto;
 }
 
+.copies__container {
+    padding: 12px 0;
+    border-bottom: 2px solid #ccc;
+}
+
+.copies__container:last-of-type {
+    border-bottom: 0px solid #ccc;
+}
+
 .copies__name {
     font-weight: bold;
     color:#136696;
@@ -50,4 +59,10 @@
 .copies__detail {
     font-weight: 700;
     font-style: italic;
+}
+
+@media screen and (width < 768px) {
+    .result_copies {
+        max-height: 340px;
+    }
 }

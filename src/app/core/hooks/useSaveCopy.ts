@@ -8,9 +8,9 @@ export const useSaveCopy = () => {
     saveCopyService({ name, author, price, type })
       .then((isSave) => {
         if (isSave) {
-          setError('Guardado satisfactoriamente');
+          setError('Saved successfully');
         } else {
-          setError('No se pudo registrar');
+          setError('Could not register');
         }
       });
   };

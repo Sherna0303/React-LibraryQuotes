@@ -15,7 +15,7 @@ export const useRegister = () => {
           dispatch({ type: 'USER_LOGGED' });
           navigate('/');
         } else {
-          setError('No se pudo registrar');
+          setError('Could not register');
         }
       });
   };
