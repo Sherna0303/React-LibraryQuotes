@@ -95,7 +95,7 @@ export const FormSaveCopy = (): ReactElement => {
           </select>
         </label>
       </fieldset>
-      {error && <Span className={`main__${error === 'Guardado satisfactoriamente' ? 'success' : 'error'}`} text={error}/>}
+      {error && <Span className={`main__${error === 'Saved successfully' ? 'success' : 'error'}`} text={error}/>}
       <Button className='main__button' text='Save Copy' disabled={!isFormValid} />
     </form>
   );
