@@ -1,4 +1,4 @@
-import copyBudgetMapper from '../mappers/copyBudget.mapper';
+import copyBudgetMapper from '../mappers/copy-budget.mapper';
 import { CopyListDetail } from '../models/copy-list-price-response.model';
 import { Copy } from '../models/copy.model';
 import { urls } from '../resources/url.resource';

@@ -18,13 +18,13 @@ export const Book: React.FC<BookProps> = ({ book, addToCart, isInCart }) => {
 
   const imageUrls = [
     'https://imagessl9.casadellibro.com/a/l/s5/29/9788416628629.webp',
-    'https://imagessl8.casadellibro.com/a/l/s5/18/9788408169918.webp',
+  /*'https://imagessl8.casadellibro.com/a/l/s5/18/9788408169918.webp',
     'https://imagessl8.casadellibro.com/a/l/s5/08/9788401343308.webp',
     'https://imagessl5.casadellibro.com/a/l/s5/05/9788467037005.webp',
     'https://imagessl5.casadellibro.com/a/l/s5/05/9788483658505.webp',
     'https://imagessl6.casadellibro.com/a/l/s5/36/9788408125136.webp',
     'https://imagessl2.casadellibro.com/a/l/s5/02/cdlet00000002.webp',
-    'https://imagessl6.casadellibro.com/a/l/s5/06/9788408123606.webp'
+    'https://imagessl6.casadellibro.com/a/l/s5/06/9788408123606.webp' */
   ];
 
   const getRandomImageUrl = () => {

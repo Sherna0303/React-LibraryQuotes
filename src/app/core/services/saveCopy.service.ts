@@ -1,4 +1,4 @@
-import savecopyMapper from '../mappers/savecopy.mapper';
+import savecopyMapper from '../mappers/save-copy.mapper';
 import { ICopySave } from '../models/copy-save.model';
 import { urls } from '../resources/url.resource';
 import http from './general/http.service';

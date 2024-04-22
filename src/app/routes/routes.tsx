@@ -1,13 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { ProtectedRoute } from './ProtectedRoute';
-import { Login } from '../pages/Login';
-import { Register } from '../pages/Register';
+import { Login } from '../pages/login.page';
+import { Register } from '../pages/register.page';
 import { ProtectLoggedRoute } from './ProtectLoggedRoute';
-import { LayoutAuth } from '../ui/layouts/LayoutAuth';
-import { LayoutMain } from '../ui/layouts/LayoutMain';
-import { SaveCopy } from '../pages/SaveCopy';
-import { ListCopies } from '../pages/ListCopies';
-import { BudgetListPage } from '../pages/BudgetListPage';
+import { LayoutAuth } from '../ui/layouts/layout-auth';
+import { LayoutMain } from '../ui/layouts/layout-main';
+import { SaveCopy } from '../pages/save-copy.page';
+import { ListCopies } from '../pages/list-copies.page';
+import { BudgetListPage } from '../pages/budget-list.page';
 
 export const router = createBrowserRouter([
   {

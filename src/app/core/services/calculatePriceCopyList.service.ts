@@ -1,4 +1,4 @@
-import copyListMapper from '../mappers/copyList.mapper';
+import copyListMapper from '../mappers/copy-list.mapper';
 import { CopyListDetail } from '../models/copy-list-price-response.model';
 import { Copy } from '../models/copy.model';
 import { urls } from '../resources/url.resource';
