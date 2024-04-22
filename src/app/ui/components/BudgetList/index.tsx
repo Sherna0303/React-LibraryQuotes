@@ -25,6 +25,11 @@ export const BudgetList: React.FC<BudgetListProps> = ({ books, cart, addToCart, 
   const [showModal, setShowModal] = useState(false);
   const [error, setError] = useState<string>('');
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [menuVisible, setMenuVisible] = useState<boolean>(false);
+
+  const toggleMenu = (): void => {
+    setMenuVisible(!menuVisible);
+  };
 
   useEffect(() => {
     setIsButtonDisabled(!isCartValid(cart) || budget <= 0);
@@ -81,12 +86,13 @@ export const BudgetList: React.FC<BudgetListProps> = ({ books, cart, addToCart, 
             </li>
           ))}
         </ul>
-        <div className='main__cart'>
+        <div className={`main__cart ${menuVisible ? '' : 'main__menu--hidden'}`}>
           <CartBudget cart={cart} removeFromCart={removeFromCart} />
           <Label classNameInput='main__input main__input-budget' classNameLabel='main__label main__label-budget' classNameSpan='main__span main__span-budget' nameInput='budget' text='Budget:' type='number' onChange={handleBudgetChange} />
           {error && <Span className='main__span-error span__error-budget' text={error}/>}
           <Button className='main__button main__button-cart' onClick={handleClick} text='Calculate' disabled={isButtonDisabled}/>
         </div>
+        <Button text='Cart' className='main__button main__toggle' onClick={toggleMenu}/>
       </div>
       
       {showModal && (

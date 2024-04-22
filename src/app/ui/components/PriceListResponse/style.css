@@ -60,3 +60,9 @@
     font-weight: 700;
     font-style: italic;
 }
+
+@media screen and (width < 768px) {
+    .result_copies {
+        max-height: 340px;
+    }
+}

@@ -22,6 +22,11 @@ export const CalculateList: React.FC<CalculateListProps> = ({ books, cart, addTo
   const [backendResponse, setBackendResponse] = useState<CopyListDetail>();
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [menuVisible, setMenuVisible] = useState<boolean>(false);
+
+  const toggleMenu = (): void => {
+    setMenuVisible(!menuVisible);
+  };
 
   useEffect(() => {
     if (cart.length > 0) {
@@ -56,10 +61,11 @@ export const CalculateList: React.FC<CalculateListProps> = ({ books, cart, addTo
             </li>
           ))}
         </ul>
-        <div className='main__cart'>
+        <div className={`main__cart ${menuVisible ? '' : 'main__menu--hidden'}`}>
           <Cart cart={cart} removeFromCart={removeFromCart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity}/>
-          <Button text='Calculate' className='main__button main__button-cart' onClick={handleClick} disabled={isButtonDisabled}/>
+          <Button text='Calculate' className='main__button main__button-cart main__button-responsive' onClick={handleClick} disabled={isButtonDisabled}/>
         </div>
+        <Button text='Cart' className='main__button main__toggle' onClick={toggleMenu}/>
       </div>
       
       {showModal && (

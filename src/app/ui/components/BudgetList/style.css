@@ -9,3 +9,41 @@
 .main__label-budget {
     margin-top: 14px;
 }
+
+@media screen and (width < 768px) {
+    .main__cart {
+        text-align: center;
+        position: fixed;
+        background: white;
+        margin: 0;
+        bottom: 12%;
+        right: 0;
+        border-radius: 8px;
+    }
+
+    .main__input-budget {
+        width: 220px !important;
+        margin: 0;
+    }
+
+    .span__error-budget {
+        margin-bottom: 10px;
+        width: 220px;
+    }
+
+    .cart__container {
+        position: fixed;
+        background: white;
+        bottom: 30%;
+        right: 0;
+        max-height: 59%;
+        max-width: 220px !important;
+    }
+
+    .main__button-cart {
+        position: fixed;
+        bottom: 5%;
+        width: 220px !important;
+        right: 0;
+    }
+}
