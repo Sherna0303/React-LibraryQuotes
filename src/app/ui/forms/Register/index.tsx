@@ -29,7 +29,7 @@ export const FormRegister = (): ReactElement => {
     const newPassword = event.target.value;
     setPassword(newPassword);
     if (newPassword.length < 8) {
-      setPasswordMatchError('La contraseña debe tener al menos 8 caracteres');
+      setPasswordMatchError('Password must be at least 8 characters');
     } else {
       setPasswordMatchError(null);
     }
@@ -39,7 +39,7 @@ export const FormRegister = (): ReactElement => {
     const newRepeatPassword = event.target.value;
     setRepeatPassword(newRepeatPassword);
     if (newRepeatPassword !== password) {
-      setPasswordMatchError('Las contraseñas no coinciden');
+      setPasswordMatchError('Passwords do not match');
     } else {
       setPasswordMatchError(null);
     }
@@ -49,7 +49,7 @@ export const FormRegister = (): ReactElement => {
     const newName = event.target.value;
     setName(newName);
     if (newName.length < 3) {
-      setNameError('El nombre debe tener al menos 3 caracteres');
+      setNameError('The name must be at least 3 characters');
     } else {
       setNameError(null);
     }
@@ -59,7 +59,7 @@ export const FormRegister = (): ReactElement => {
     const newEmail = event.target.value;
     setEmail(newEmail);
     if (!isValidEmail(newEmail)) {
-      setEmailError('Ingrese un correo electrónico válido');
+      setEmailError('Enter a valid email address');
     } else {
       setEmailError(null);
     }

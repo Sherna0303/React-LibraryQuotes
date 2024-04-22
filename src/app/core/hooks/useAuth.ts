@@ -14,7 +14,7 @@ export const useAuth = () => {
         dispatch({ type: 'USER_LOGGED' });
         navigate('/');
       } else {
-        setError('Las credenciales son incorrectas');
+        setError('The credentials are incorrect');
       }
     });
   return { authenticate, error };

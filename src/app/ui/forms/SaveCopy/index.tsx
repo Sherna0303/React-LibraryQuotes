@@ -26,7 +26,7 @@ export const FormSaveCopy = (): ReactElement => {
     setFormData((prevData) => ({ ...prevData, name: newName }));
 
     if (newName.length < 3) {
-      setNameError('El nombre debe tener al menos 3 caracteres');
+      setNameError('The name must be at least 3 characters');
     } else {
       setNameError(null);
     }
@@ -37,7 +37,7 @@ export const FormSaveCopy = (): ReactElement => {
     setFormData((prevData) => ({ ...prevData, author: newAuthor }));
 
     if (newAuthor.length < 3) {
-      setAuthorError('El autor debe tener al menos 3 caracteres');
+      setAuthorError('Author must be at least 3 characters');
     } else {
       setAuthorError(null);
     }
@@ -48,7 +48,7 @@ export const FormSaveCopy = (): ReactElement => {
     setFormData((prevData) => ({ ...prevData, price: newPrice }));
 
     if (newPrice <= 0) {
-      setPriceError('El precio debe ser mayor que 0');
+      setPriceError('Price must be greater than 0');
     } else {
       setPriceError(null);
     }
