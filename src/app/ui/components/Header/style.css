@@ -44,7 +44,7 @@
 .button__header {
     padding: 8px 8px;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: #75a1e4d0;
     cursor: pointer;
     transition: background-color 0.3s ease;
