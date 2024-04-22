@@ -7,6 +7,7 @@ import { LayoutAuth } from '../ui/layouts/LayoutAuth';
 import { LayoutMain } from '../ui/layouts/LayoutMain';
 import { SaveCopy } from '../pages/SaveCopy';
 import { ListCopies } from '../pages/ListCopies';
+import { BudgetListPage } from '../pages/BudgetListPage';
 
 export const router = createBrowserRouter([
   {
@@ -46,7 +47,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/funtion3',
-        element: <h1>funcion3</h1>
+        Component: BudgetListPage
       },
     ]
   },

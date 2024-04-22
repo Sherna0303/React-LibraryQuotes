@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Copy } from '../../../core/models/copy.model';
 import { calculatePriceCopyListService } from '../../../core/services/calculatePriceCopyList.service';
 import { Book } from '../Book';
@@ -7,6 +7,7 @@ import { PriceListResponse } from '../PriceListResponse';
 import { Title } from '../../elements/Title';
 import { CopyListDetail } from '../../../core/models/copy-list-price-response.model';
 import './style.css';
+import { Button } from '../../elements/Button';
 
 interface CalculateListProps {
   books: Copy[];
@@ -19,7 +20,16 @@ interface CalculateListProps {
 
 export const CalculateList: React.FC<CalculateListProps> = ({ books, cart, addToCart, removeFromCart,  increaseQuantity, decreaseQuantity}) => {
   const [backendResponse, setBackendResponse] = useState<CopyListDetail>();
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    if (cart.length > 0) {
+      setIsButtonDisabled(false);
+    } else {
+      setIsButtonDisabled(true);
+    }
+  }, [cart]);
 
   const handleClick = () => {
     if (cart.length > 0) {
@@ -48,7 +58,7 @@ export const CalculateList: React.FC<CalculateListProps> = ({ books, cart, addTo
         </ul>
         <div className='main__cart'>
           <Cart cart={cart} removeFromCart={removeFromCart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity}/>
-          <button className='main__button main__button-cart' onClick={handleClick}>Calculate</button>
+          <Button text='Calculate' className='main__button main__button-cart' onClick={handleClick} disabled={isButtonDisabled}/>
         </div>
       </div>
       

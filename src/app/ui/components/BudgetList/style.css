@@ -1,0 +1,11 @@
+.span__error-budget {
+    max-width: 220px;
+}
+
+.main__input-budget {
+    width: 220px !important;
+}
+
+.main__label-budget {
+    margin-top: 14px;
+}
