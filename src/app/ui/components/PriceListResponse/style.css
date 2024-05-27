@@ -1,0 +1,68 @@
+.result__title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #136696;
+}
+
+.result__detail {
+    font-weight: bold;
+}
+
+.result__detail-container {
+    display: flex;
+    margin-bottom: 5px;
+    gap: 8px;
+}
+
+.result__antiquityYears,
+.result__total,
+.result__totalDiscount {
+    font-weight: 400;
+}
+
+.result__title-copies {
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+.result_copies {
+    padding: 12px;
+    border-radius: 10px;
+    background: #cccccc42;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.copies__container {
+    padding: 12px 0;
+    border-bottom: 2px solid #ccc;
+}
+
+.copies__container:last-of-type {
+    border-bottom: 0px solid #ccc;
+}
+
+.copies__name {
+    font-weight: bold;
+    color:#136696;
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.copies__detail-container {
+    display: flex;
+    margin-bottom: 5px;
+    gap: 8px;
+}
+
+.copies__detail {
+    font-weight: 700;
+    font-style: italic;
+}
+
+@media screen and (width < 768px) {
+    .result_copies {
+        max-height: 340px;
+    }
+}
