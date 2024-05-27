@@ -7,7 +7,6 @@ export const useLogOut = () => {
   const logOut = () => {
     dispatch({ type: 'USER_NOT_LOGGED' });
     localStorage.removeItem('TOKEN');
-    window.location.reload();
   };
   
   return logOut;
